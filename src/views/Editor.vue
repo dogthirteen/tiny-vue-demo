@@ -26,9 +26,10 @@ import 'tinymce/plugins/print' //打印
 import 'tinymce/plugins/searchreplace' //查找替换
 import 'tinymce/plugins/hr' //水平分割线
 import 'tinymce/plugins/preview' //预览
-import 'tinymce/plugins/lists' //预览
+import 'tinymce/plugins/lists' //有序列表 无序列表
 import 'tinymce/plugins/charmap' //特殊字符
-import 'tinymce/plugins/emoticons' //表情 需要单独引入表情文件
+import 'tinymce/plugins/emoticons' //unicode字符表情 需要单独引入表情文件 用法 emoticons_database_url: '/js/emoji.js'
+import 'tinymce/plugins/pagebreak' // 分页
 import '/public/tinymce/plugins/axupimgs' // 多图上传
 
 // 配置富文本
@@ -37,12 +38,12 @@ export default {
   data() {
     // 自定义工具
     const toolbar = `undo redo removeformat code searchreplace fontselect  styleselect fontsizeselect  hr alignleft aligncenter alignright alignjustify 
-     outdent indent blockquote lineheight subscript superscript forecolor backcolor bold italic underline strikethrough link anchor charmap  
+     outdent indent blockquote lineheight subscript superscript forecolor backcolor bold italic underline strikethrough link anchor charmap  pagebreak 
      bullist numlist table lists
      preview image axupimgs media wordcount insertdatetime print fullscreen`
 
     // 插件配置
-    const plugins = `link image code wordcount fullscreen insertdatetime media print searchreplace hr preview table lists axupimgs charmap `
+    const plugins = `link image code wordcount fullscreen insertdatetime media print searchreplace hr preview table lists axupimgs charmap pagebreak`
 
     const fontsize_formats = '12px 14px 16px 18px 24px 36px 48px 56px 72px'
     const font_formats =
