@@ -68,7 +68,6 @@ export default {
         importcss_append: true, //，它将默认将导入的样式附加到“格式”菜单的末尾，它将替换默认格式。
         file_picker_types: 'file media', // 上传文件类型配置  'file image media'
         insertdatetime_formats: ['%Y年%m月%d日', '%Y年%m月%d日 %H点%M分', '%Y年%m月%d日 %H点%M分%S秒'], //自定义下拉列表的日期时间格式
-        imagetools_cors_hosts: ['mutouyun-test.oss-cn-shenzhen.aliyuncs.com'],
         init_instance_callback: editor => {
           // 监听富文本框内容改变 传值给父组件
           editor.on('NodeChange Change KeyUp SetContent', () => {
