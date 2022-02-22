@@ -15,6 +15,7 @@ import 'tinymce/skins/ui/oxide/skin.min.css' //富文本样式 浅色
 
 import 'tinymce/icons/default' //富文本样式
 import 'tinymce/plugins/image' //图片
+import 'tinymce/plugins/imagetools' //图片工具 5.10.0最后的开源版本 编辑后的图片为base64数据格式 不利于接口传输  后续6.0版本 此插件为收费版
 import 'tinymce/plugins/media' //多媒体
 import 'tinymce/plugins/link' //超链接
 import 'tinymce/plugins/code' //代码模式
@@ -44,7 +45,7 @@ export default {
      preview image axupimgs media wordcount insertdatetime print fullscreen`
 
     // 插件配置
-    const plugins = `link image code wordcount fullscreen insertdatetime media print searchreplace hr preview table lists axupimgs charmap pagebreak quickbars`
+    const plugins = `link image code wordcount fullscreen insertdatetime media print searchreplace hr preview table lists axupimgs charmap pagebreak quickbars imagetools`
 
     const fontsize_formats = '12px 14px 16px 18px 24px 36px 48px 56px 72px'
     const font_formats =
@@ -69,8 +70,8 @@ export default {
         importcss_append: true, //，它将默认将导入的样式附加到“格式”菜单的末尾，它将替换默认格式。
         quickbars_selection_toolbar: 'bold italic | image media table', //设置 快速选择 触发提供的工具栏。
         file_picker_types: 'file media', // 上传文件类型配置  'file image media'
+        imagetools_cors_hosts:['titangene.github.io'], 
         insertdatetime_formats: ['%Y年%m月%d日', '%Y年%m月%d日 %H点%M分', '%Y年%m月%d日 %H点%M分%S秒'], //自定义下拉列表的日期时间格式
-        imagetools_cors_hosts: ['mutouyun-test.oss-cn-shenzhen.aliyuncs.com'],
         images_upload_handler: (blobInfo, success, failure, progress) => {
           // progress=>上传进度
           // 此处写上传图片处理逻辑
