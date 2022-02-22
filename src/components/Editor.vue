@@ -39,8 +39,8 @@ import 'tinymce/themes/silver/theme.min.js' //引入富文本的主要脚本
 export default {
   data() {
     // 自定义工具
-    const toolbar = `undo redo removeformat code searchreplace fontselect  styleselect fontsizeselect  hr alignleft aligncenter alignright alignjustify 
-     outdent indent blockquote lineheight subscript superscript forecolor backcolor bold italic underline strikethrough link anchor charmap  pagebreak 
+    const toolbar = `undo redo removeformat code searchreplace fontselect  styleselect fontsizeselect  hr alignleft aligncenter alignright alignjustify
+     outdent indent blockquote lineheight subscript superscript forecolor backcolor bold italic underline strikethrough link anchor charmap  pagebreak
      bullist numlist table lists
      preview image axupimgs media wordcount insertdatetime print fullscreen`
 
@@ -70,8 +70,15 @@ export default {
         importcss_append: true, //，它将默认将导入的样式附加到“格式”菜单的末尾，它将替换默认格式。
         quickbars_selection_toolbar: 'bold italic | image media table', //设置 快速选择 触发提供的工具栏。
         file_picker_types: 'file media', // 上传文件类型配置  'file image media'
-        imagetools_cors_hosts:['titangene.github.io'], 
+        imagetools_cors_hosts: ['www.baidu.com'],
         insertdatetime_formats: ['%Y年%m月%d日', '%Y年%m月%d日 %H点%M分', '%Y年%m月%d日 %H点%M分%S秒'], //自定义下拉列表的日期时间格式
+        // 图片工具处理图片回调
+        imagetools_fetch_image: img => {
+          // return new tinymce.util.Promise(function (resolve) {
+          //   resolve(new Blob(img))
+          // })
+        },
+        // 自定义上传图片回调
         images_upload_handler: (blobInfo, success, failure, progress) => {
           // progress=>上传进度
           // 此处写上传图片处理逻辑
@@ -79,7 +86,7 @@ export default {
 
           console.log(blobInfo, file)
 
-          success('https://titangene.github.io/images/cover/css.png')
+          success('https://www.baidu.com/img/bd_logo1.png')
         },
         /**
          * 文件上传
